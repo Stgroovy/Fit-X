@@ -7,7 +7,7 @@ static void Main()
     string type = Console.ReadLine();
 
     Console.Write("Enter workout duration: ");
-    double duration = Console.ReadLine();
+    double duration = double.Parse(Console.ReadLine());
       if (duration <= 0)
     {
         Console.Write("Please enter a valid number for duration:");
