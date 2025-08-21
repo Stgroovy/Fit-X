@@ -9,15 +9,15 @@ namespace Fit_X
 {
     class Fitness
     {
-        public string Exercise;
-        public double Duration;
-        public double Calories;
-        public DateTime Date;
+        public string exercise;
+        public double timeSpan;
+        public double calories;
+        public DateTime date;
 
-        public double workOutCalories()
+        public double WorkOutCalories()
         {
             double caloriesBurned;
-            string workOutType = Exercise.ToLower();
+            string workOutType = exercise.ToLower();
 
             if (workOutType == "jogging")
             {
@@ -41,19 +41,19 @@ namespace Fit_X
                 caloriesBurned = 7;
             }
 
-            return caloriesBurned * Duration;
+            return caloriesBurned * duration;
         }
           
         public Fitness (string type, double duration)
         {
-            Exercise = type;
-            Duration = duration;
-            Calories = workOutCalories();
+            exercise = type;
+            timeSpan = duration;
+            calories = WorkOutCalories();
         }
 
-        public string summary()
+        public string Summary()
         {
-            return $"{Date} - {Exercise} for {Duration} mins => {Calories} cal";
+            return $"{date} - {exercise} for {timeSpan} mins => {calories} cal";
         }
     }
 }
